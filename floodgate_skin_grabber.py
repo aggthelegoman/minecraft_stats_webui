@@ -1,22 +1,28 @@
-import requests
+from __future__ import annotations
+
 import sys
 
-# this uses the api found at:
-# https://mcprofile.io/
+import requests
 
-#usage:
-# floodgate_skin_grabber.py <username>
-# the username must have the "." omitted for it to work
+from config import PLAYER_SKINS_DIR
 
-url =  f"https://mcprofile.io/api/v1/bedrock/gamertag/{sys.argv[1]}"
 
-response = requests.get(url)
+def main() -> None:
+    if len(sys.argv) < 2:
+        raise SystemExit("Usage: floodgate_skin_grabber.py <gamertag-without-leading-dot>")
 
-if response.status_code == 200:
+    username = sys.argv[1]
+    url = f"https://mcprofile.io/api/v1/bedrock/gamertag/{username}"
+
+    response = requests.get(url, timeout=20)
+    if response.status_code != 200:
+        raise SystemExit(f"Did not receive HTTP 200 from {url}")
+
     data = response.json()
-    image = requests.get(data['skin']).content
-    f = open(f'player_skins/.{sys.argv[1]}.png','wb')
-    f.write(image)
-    f.close()
-else:
-    print("Did not receive http code 200, image failed to download")
+    image = requests.get(data["skin"], timeout=20).content
+    output_path = PLAYER_SKINS_DIR / f".{username}.png"
+    output_path.write_bytes(image)
+
+
+if __name__ == "__main__":
+    main()
