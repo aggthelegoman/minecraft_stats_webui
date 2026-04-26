@@ -70,7 +70,3 @@ Generated skins are stored in `player_skins/` and are ignored by `.gitignore`. T
 - The default admin credentials in `minecraft_stats_webui.py` should be changed before deploying publicly.
 - The app expects the database schema created by the RooByteNet plugin.
 - The helper scripts depend on external APIs for skin downloads.
-
-## Demo
-
-A live demo was previously hosted at [stats.gardnercraft.dedyn.io](https://stats.gardnercraft.dedyn.io).
