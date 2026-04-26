@@ -1,0 +1,8 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.streamlit/
+
+player_skins/*.png
+!player_skins/alt_playerhead.png
