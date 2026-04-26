@@ -10,6 +10,8 @@ from base64 import b64decode
 
 import requests
 
+from config import PLAYER_SKINS_DIR
+
 DEBUG = False
 SIMULATE = False
 
@@ -103,7 +105,7 @@ def main():
     if DEBUG:
         print("{0} {1}".format(r.status_code, skin_url), file=sys.stderr)
 
-    with open(f"player_skins/{username}.png".format(username=sys.argv[1]), 'wb') as f:
+    with (PLAYER_SKINS_DIR / f"{username}.png").open('wb') as f:
         shutil.copyfileobj(r.raw, f)
 
 if __name__ == '__main__':
