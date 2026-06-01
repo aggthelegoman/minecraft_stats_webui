@@ -12,6 +12,9 @@ This project is designed to work with [Minecraft Statistics to MySQL by RooByteN
 - Player head images with a fallback placeholder
 - Helper scripts for downloading Java and Floodgate/Bedrock skins
 
+## Live Demo
+[stats.gardnercraft.dedyn.io/](https://stats.gardnercraft.dedyn.io/)
+
 ## Project Structure
 
 ```text
