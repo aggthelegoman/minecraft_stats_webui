@@ -1,5 +1,5 @@
 import json
-#this is currently somewhat unfinished
+#this is currently somewhat unfinished, the parser doesn't fully work yet, and doesn't post to any database
 def parse_key(key):
     """
     Parses key format: <origin>:<path>
