@@ -13,7 +13,7 @@ This project is designed to work with [Minecraft Statistics to MySQL by RooByteN
 - Helper scripts for downloading Java and Floodgate/Bedrock skins
 
 ## Live Demo
-[stats.gardnercraft.dedyn.io/](https://stats.gardnercraft.dedyn.io/)
+[stats.gardnercraft.dedyn.io/](https://old_stats.gardnercraft.dedyn.io/)
 
 ## Project Structure
 
